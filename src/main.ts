@@ -27,6 +27,26 @@ console.log(drycker.join(' '))
 // d) skriv ut Object.keys(kopp)
 // TODO
 
+const kopp = { namn: 'Latte', pris: 45, vegetarisk: true }
+console.log(`${kopp.namn} costs : ${kopp['pris']} Kr.`)
+kopp['pris'] = 48
+console.log(`${kopp.namn} costs : ${kopp['pris']} Kr.`)
+//kopp.storlek = 'Stor'
+
+interface cup {
+    name: string
+    price: number
+    vegetarian: boolean
+    size?: string
+}
+
+const Drink1: cup = { name: 'Latte', price: 45, vegetarian: true }
+const Drink2: cup = { name: 'Tea', price: 25, vegetarian: true, size: 'Big' }
+console.log(Object.keys(Drink1))
+
+for (const k of Object.keys(Drink1) as (keyof typeof Drink1)[])
+    console.log(`${k} is  ${Drink1[k]}`)
+
 // UPPGIFT 3: arrayer av objekt
 // a) skriv ut hur många rätter menyn har och namnet på den första
 // b) loopa med for...of och skriv ut "namn – pris kr" för varje rätt

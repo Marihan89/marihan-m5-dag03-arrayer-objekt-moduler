@@ -1,5 +1,6 @@
 // Dag 3, del 1: Arrayer och objekt i Console.
 import { meny } from './data'
+import { formateraPris } from './pris'
 
 // UPPGIFT 1: arrayer
 // a) skapa const drycker: string[] = ["Bryggkaffe", "Latte", "Te"];
@@ -52,3 +53,10 @@ for (const k of Object.keys(Drink1) as (keyof typeof Drink1)[])
 // b) loopa med for...of och skriv ut "namn – pris kr" för varje rätt
 // c) skriv ut namnet på den sista rätten utan att veta antalet (tips: length - 1)
 // TODO
+console.log(`Our Menu has ${meny.length} dishes.`)
+console.log('1-' + meny[0].namn)
+
+console.log('   Dish     -    PRice \n -------------------------')
+for (const d of meny) console.log(`${d.namn} - ${formateraPris(d.pris)}`)
+
+console.log('Last Dish : ' + meny[meny.length - 1].namn)

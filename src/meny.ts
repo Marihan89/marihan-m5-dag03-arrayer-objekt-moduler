@@ -2,6 +2,7 @@
 // Använd filter, map, find, reduce och sort där det passar.
 // Typerna (Ratt, OrderRad) finns i typer.ts. Röda understrykningar tills du skrivit return är normalt.
 import { formateraPris } from './pris'
+import { studentPris } from './rabatt'
 import type { Ratt, OrderRad } from './typer'
 
 // 1. Alla vegetariska rätter (filter). Returnerar en ny array.
@@ -92,4 +93,15 @@ export function medNyttPris(ratt: Ratt, nyttPris: number): Ratt {
     // to make changes separated from the original object
     const newlist = { ...ratt, pris: nyttPris }
     return newlist
+}
+
+export function orderprice(
+    order: OrderRad[],
+    meny: Ratt[],
+    student: boolean,
+    discount: number = 10
+): number {
+    discount !== null ? discount : 0
+    if (student) return studentPris(totalPris(order, meny), discount)
+    else return totalPris(order, meny)
 }

@@ -1,6 +1,7 @@
 // Dag 3, del 1: Arrayer och objekt i Console.
 import { meny } from './data'
 import { formateraPris } from './pris'
+import { studentPris } from './rabatt'
 
 // UPPGIFT 1: arrayer
 // a) skapa const drycker: string[] = ["Bryggkaffe", "Latte", "Te"];
